@@ -13,4 +13,23 @@ app.get("/", (req,res) => {
     )
 })
 
+//busca por id
+app.get("/:id", (req,res) => {
+    let movie = moviesData.films
+    res.json(movie.find(i => i.id == req.params.id))
+})
+
+//busca por titulo
+app.get("/title/:title", (req,res) => {
+    let movie = moviesData.films
+    res.json(movie.find(i => i.title ==  req.params.title))
+    console.log(req.params.title)
+})
+
+
 app.listen(PORT)
+
+/*
+Kiki's Delivery Service
+Porco Rosso
+*/ 
